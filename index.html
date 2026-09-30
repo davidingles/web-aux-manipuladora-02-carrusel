@@ -1,0 +1,603 @@
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta
+			name="description"
+			content="Envases, embalajes, impresión y troquelado en cartón corrugado."
+		/>
+		<title>Auxiliar Manipuladora del Cartón | Packaging que funciona</title>
+		<link rel="icon" type="image/svg+xml" href="favicon.svg" />
+		<link rel="alternate icon" href="favicon.ico" />
+		<link rel="stylesheet" href="css/reset.css" />
+		<link rel="stylesheet" href="css/variables.css" />
+		<link rel="stylesheet" href="css/base.css" />
+		<link rel="stylesheet" href="css/components.css" />
+		<link rel="stylesheet" href="css/responsive.css" />
+		<link rel="stylesheet" href="css/page-overrides.css" />
+		<link rel="stylesheet" href="css/arc-carousel.css" />
+	</head>
+	<body>
+		<header class="site-header" id="inicio">
+			<div class="container nav-wrap">
+				<a class="brand" href="#inicio" aria-label="VerdeForma, inicio"
+					><img class="brand__logo" src="assets/logo-aux.svg" alt="VerdeForma"
+				/></a>
+				<button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">
+					<span></span><span></span>
+				</button>
+				<nav class="nav" aria-label="Navegación principal">
+					<a href="catalogo/">Catálogo</a><a href="#equipo">Nosotros</a><a href="#contacto">Contacto</a
+					><a class="nav__cta" href="#contacto"
+						>Solicitar presupuesto <span>→</span></a
+					>
+				</nav>
+			</div>
+		</header>
+		<main>
+			<section class="hero">
+				<div class="container hero__layout">
+					<div class="hero__copy reveal">
+						<h1>Una caja no es<br /><em>solo una caja.</em></h1>
+						<p class="hero__lead">
+							Fabricamos envases y embalajes de cartón corrugado que protegen tu
+							producto, simplifican la logística y hacen reconocible tu marca.
+						</p>
+						<div class="hero__actions">
+							<a class="button button--dark" href="#contacto"
+								>Cuéntanos tu proyecto <span>→</span></a
+							>
+						</div>
+					</div>
+					<div class="hero__media reveal">
+						<img src="assets/nave.jpg" alt="Nave industrial de VerdeForma" />
+						<div class="media-tag"><span>01</span> Hecho para llegar lejos</div>
+					</div>
+				</div>
+			</section>
+			<section class="intro container section-pad">
+				<p class="eyebrow reveal">Soluciones reales para productos reales</p>
+				<div class="intro__layout">
+					<h2 class="reveal">Trabajamos<br />contigo.</h2>
+					<div class="intro__copy reveal">
+						<p>
+							Es la primera impresión de tu marca. La capa que protege lo importante.
+							El punto en el que diseño, logística y producción tienen que entenderse.
+						</p>
+						<a class="text-link" href="#empresa"
+							>Nuestra manera de trabajar <span>→</span></a
+						>
+					</div>
+				</div>
+			</section>
+			<section class="metrics">
+				<div class="container metrics__grid">
+					<div class="metric reveal">
+						<strong data-count="30" data-suffix="+">0</strong
+						><span>Años creando packaging</span>
+					</div>
+					<div class="metric reveal">
+						<strong data-count="4" data-suffix="">0</strong
+						><span>Áreas para resolver tu proyecto</span>
+					</div>
+					<div class="metric reveal">
+						<strong data-count="100" data-suffix="%">0</strong
+						><span>Atención centrada en tus necesidades</span>
+					</div>
+					<div class="metric reveal">
+						<strong data-count="1" data-suffix=" equipo">0</strong
+						><span>Desde la idea hasta la entrega</span>
+					</div>
+				</div>
+			</section>
+			<section class="look-around section-pad" id="echa-un-vistazo" aria-label="Echa un vistazo a nuestros productos">
+				<div class="container">
+					<div class="section-heading reveal">
+						<div>
+							<p class="eyebrow">Catálogo destacado</p>
+							<h2>Echa un vistazo.</h2>
+						</div>
+						<p>
+							Una muestra interactiva de nuestras soluciones en estuches, cajas y expositores de cartón corrugado.
+						</p>
+					</div>
+				</div>
+
+				<div class="carousel-stage">
+					<div id="carouselContainer" class="carousel-container" role="region" aria-roledescription="carrusel">
+						<div id="carouselTrack" class="carousel-track">
+							<!-- Tarjetas de producto generadas dinámicamente -->
+						</div>
+					</div>
+				</div>
+
+				<div class="carousel-controls">
+					<button id="btnPrev" class="nav-arrow prev" type="button" aria-label="Producto anterior">
+						<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+							<polyline points="15 18 9 12 15 6"></polyline>
+						</svg>
+					</button>
+					<button id="btnNext" class="nav-arrow next" type="button" aria-label="Producto siguiente">
+						<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+							<polyline points="9 18 15 12 9 6"></polyline>
+						</svg>
+					</button>
+				</div>
+
+				<nav class="filters-nav" aria-label="Filtrar por categoría">
+					<div id="filterContainer" class="filter-pills-list">
+						<!-- Filtros generados dinámicamente -->
+					</div>
+				</nav>
+			</section>
+			<section class="solutions section-pad" id="soluciones">
+				<div class="container">
+					<div class="section-heading reveal">
+						<div>
+							<p class="eyebrow">Qué podemos hacer</p>
+							<h2>Todo lo que tu<br />producto necesita.</h2>
+						</div>
+						<p>
+							Una fábrica próxima para una solución a medida, sin capas innecesarias.
+						</p>
+					</div>
+<div class="solutions__grid">
+					<article class="solution-card solution-card--media reveal">
+						<video
+							class="solution-card__video"
+							data-src="assets/videos/optimized/vPloter.webm"
+							muted
+							loop
+							playsinline
+							aria-hidden="true"
+						></video>
+						<i class="solution-card__scrim" aria-hidden="true"></i>
+						<div class="solution-card__body">
+							<span>01</span>
+							<h3>Envases a medida</h3>
+							<p>Formatos que encajan con tu producto y con tu marca.</p>
+							<a href="#contacto" aria-label="Solicitar presupuesto de envases a medida">→</a>
+						</div>
+					</article>
+					<article class="solution-card solution-card--media reveal">
+						<video
+							class="solution-card__video"
+							data-src="assets/videos/optimized/vPegadoraMarron.webm"
+							muted
+							loop
+							playsinline
+							aria-hidden="true"
+						></video>
+						<i class="solution-card__scrim" aria-hidden="true"></i>
+						<div class="solution-card__body">
+							<span>02</span>
+							<h3>Embalaje<br />corrugado</h3>
+							<p>Resistencia, protección y eficiencia para el recorrido completo.</p>
+							<a href="#contacto" aria-label="Solicitar presupuesto de embalaje">→</a>
+						</div>
+					</article>
+					<article class="solution-card solution-card--media reveal">
+						<video
+							class="solution-card__video"
+							data-src="assets/videos/optimized/vImpresora.webm"
+							muted
+							loop
+							playsinline
+							aria-hidden="true"
+						></video>
+						<i class="solution-card__scrim" aria-hidden="true"></i>
+						<div class="solution-card__body">
+							<span>03</span>
+							<h3>Impresión<br />que comunica</h3>
+							<p>Gráfica clara y acabados que añaden valor al instante.</p>
+							<a href="#contacto" aria-label="Solicitar presupuesto de impresión">→</a>
+						</div>
+					</article>
+					<article class="solution-card solution-card--media reveal">
+						<video
+							class="solution-card__video"
+							data-src="assets/videos/optimized/vTroqueladora.webm"
+							muted
+							loop
+							playsinline
+							aria-hidden="true"
+						></video>
+						<i class="solution-card__scrim" aria-hidden="true"></i>
+						<div class="solution-card__body">
+							<span>04</span>
+							<h3>Troquelado<br />de precisión</h3>
+							<p>Estructuras especiales para ideas que no caben en lo estándar.</p>
+							<a href="#contacto" aria-label="Solicitar presupuesto de troquelado">→</a>
+						</div>
+					</article>
+				</div>
+				</div>
+			</section>
+			<section class="impact section-pad" id="equipo">
+				<div class="container">
+					<div class="impact__header reveal">
+						<div>
+							<p class="eyebrow">El impacto de un buen equipo</p>
+							<h2>Personas que hacen<br />que todo encaje.</h2>
+						</div>
+						<div class="slider-controls" aria-label="Controles del equipo">
+							<button
+								class="slider-button"
+								type="button"
+								data-slider-previous
+								aria-label="Ver perfil anterior"
+							>
+								←</button
+							><button
+								class="slider-button"
+								type="button"
+								data-slider-next
+								aria-label="Ver perfil siguiente"
+							>
+								→
+							</button>
+						</div>
+					</div>
+				</div>
+				<div
+					class="impact__viewport"
+					data-team-slider
+					tabindex="0"
+					aria-label="Perfiles del equipo. Desliza para ver más."
+				>
+					<div class="impact__track">
+						<article class="impact-card">
+							<div class="impact-card__copy">
+								<span>01 / Dirección</span>
+								<h3>Ventas</h3>
+								<p>
+									Da rumbo a cada decisión: une la visión de la empresa, las necesidades
+									de los clientes y el trabajo de toda la fábrica.
+								</p>
+							</div>
+							<img
+								src="assets/avatares/eL8UX.jpg"
+								alt="Avatar del departamento de gerencia"
+								tabindex="0"
+							/>
+							<div class="impact-card__name">Miguel Angel Latorre</div>
+							<div class="impact-card__phone">
+								<a href="tel:686944933">686 944 933</a>
+							</div>
+						</article>
+						<article class="impact-card">
+							<div class="impact-card__copy">
+								<span>02 / Operaciones</span>
+								<h3>Logística</h3>
+								<p>
+									Coordina tiempos, materiales y entregas para que cada pedido llegue
+									completo, protegido y cuando tiene que llegar.
+								</p>
+							</div>
+							<img
+								src="assets/avatares/W9TSM.jpg"
+								alt="Avatar del departamento de logística"
+								tabindex="0"
+							/>
+							<div class="impact-card__name">Angel Latorre</div>
+							<div class="impact-card__phone">
+								<a href="tel:657803024">657 80 30 24</a>
+							</div>
+						</article>
+						<article class="impact-card">
+							<div class="impact-card__copy">
+								<span>03 / Creatividad</span>
+								<h3>Diseño</h3>
+								<p>
+									Convierte las necesidades de un producto en estructuras útiles y una
+									presencia gráfica que se reconoce a primera vista.
+								</p>
+							</div>
+							<img
+								src="assets/avatares/x2DYN.jpg"
+								alt="Avatar del departamento de diseño"
+								tabindex="0"
+							/>
+							<div class="impact-card__name">Vicente Latorre</div>
+							<div class="impact-card__phone">
+								<a href="tel:657842909">657 84 29 09</a>
+							</div>
+						</article>
+						<article class="impact-card">
+							<div class="impact-card__copy">
+								<span>04 / Coordinación</span>
+								<h3>Administración</h3>
+								<p>
+									Hace que la relación sea clara y ágil: presupuestos, pedidos y
+									seguimiento para que cada proyecto avance sin fricción.
+								</p>
+							</div>
+							<img
+								src="assets/avatares/Z4j7S.jpg"
+								alt="Avatar del departamento de administración"
+								tabindex="0"
+							/>
+							<div class="impact-card__name">Jesús Latorre</div>
+							<div class="impact-card__phone">
+								<a href="tel:686944932">686 944 932</a>
+							</div>
+						</article>
+					</div>
+				</div>
+			</section>
+			<section class="feature section-pad" id="proceso">
+				<div class="container feature__grid">
+					<div class="feature__image reveal">
+						<video
+							autoplay
+							muted
+							loop
+							playsinline
+							preload="auto"
+							data-video-switchable
+							aria-label="Cajas de cartón en movimiento"
+						>
+							<source src="assets/videos/optimized/0001-0163.mp4" type="video/mp4" />
+							Tu navegador no admite la reproducción de vídeo.
+						</video>
+						<p>Vídeo de representación</p>
+					</div>
+					<div class="feature__content reveal">
+						<p class="eyebrow">Un proceso claro</p>
+						<h2>Menos fricción.<br /><em>Más resultado.</em></h2>
+						<p>
+							Convertimos requisitos técnicos, necesidades de transporte y objetivos de
+							marca en packaging listo para producir.
+						</p>
+						<ol>
+							<li><span>01</span> Escuchamos lo que necesita tu producto.</li>
+							<li><span>02</span> Diseñamos una solución funcional.</li>
+							<li><span>03</span> Producimos y acompañamos la entrega.</li>
+						</ol>
+					</div>
+				</div>
+			</section>
+			<section class="faq section-pad" id="empresa">
+				<div class="container faq__layout">
+					<div class="faq__title reveal">
+						<p class="eyebrow">Sin letras pequeñas</p>
+						<h2>Todo claro,<br />desde el inicio.</h2>
+						<img src="assets/cajaB1.png" alt="Caja de cartón de VerdeForma" />
+						<p>
+							Resolvemos las preguntas que suelen aparecer antes de arrancar un
+							proyecto de packaging.
+						</p>
+					</div>
+					<div class="accordion reveal">
+						<details open>
+							<summary>
+								¿Qué tipo de envases fabricáis?<span
+									><svg aria-hidden="true" viewBox="0 0 24 24">
+										<path d="m8 5 7 7-7 7"></path></svg
+								></span>
+							</summary>
+							<div class="accordion__content">
+								<p>
+									Fabricamos cajas, bandejas, separadores, expositores y embalajes de
+									cartón corrugado. Partimos del producto real, de su recorrido y de la
+									forma en que debe llegar para crear una solución que proteja, encaje y
+									funcione desde el primer día.
+								</p>
+							</div>
+						</details>
+						<details>
+							<summary>
+								¿Podéis imprimir mi diseño?<span
+									><svg aria-hidden="true" viewBox="0 0 24 24">
+										<path d="m8 5 7 7-7 7"></path></svg
+								></span>
+							</summary>
+							<div class="accordion__content">
+								<p>
+									Sí. Revisamos tu diseño, los soportes y el acabado para que la gráfica
+									no solo se vea bien, sino que también acompañe la estructura del
+									envase. El resultado es un packaging reconocible, claro y coherente con
+									tu marca.
+								</p>
+							</div>
+						</details>
+						<details>
+							<summary>
+								¿Trabajáis proyectos a medida?<span
+									><svg aria-hidden="true" viewBox="0 0 24 24">
+										<path d="m8 5 7 7-7 7"></path></svg
+								></span>
+							</summary>
+							<div class="accordion__content">
+								<p>
+									Ese es nuestro punto de partida. Estudiamos medidas, resistencia,
+									apilado, transporte y manipulación para convertir una necesidad
+									concreta en una solución que ahorre espacio, evite problemas y haga más
+									sencillo el trabajo diario.
+								</p>
+							</div>
+						</details>
+						<details>
+							<summary>
+								¿Dónde estáis ubicados?<span
+									><svg aria-hidden="true" viewBox="0 0 24 24">
+										<path d="m8 5 7 7-7 7"></path></svg
+								></span>
+							</summary>
+							<div class="accordion__content">
+								<p>
+									Estamos en Lorquí, Murcia. Desde aquí acompañamos cada proyecto con una
+									relación cercana: hablamos claro, coordinamos los tiempos y seguimos el
+									pedido para que cada entrega llegue cuando toca.
+								</p>
+							</div>
+						</details>
+					</div>
+				</div>
+			</section>
+			<section class="quote">
+				<div class="container quote__inner reveal">
+					<span class="quote__mark">“</span>
+					<p>El buen packaging se nota antes de abrirlo.</p>
+					<span class="quote__line"></span>
+				</div>
+			</section>
+			<section class="sustainability" id="sostenibilidad">
+				<div class="sustainability__container">
+					<div class="sustainability__layout">
+						<div class="sustainability__media reveal">
+							<img
+								class="sustainability__image"
+								src="assets/casita copia-01.svg"
+								alt="Casita de cartón"
+							/>
+							<div class="sustainability__badge">
+								<strong>98%</strong>
+								<span>de nuestra materia prima es reciclada</span>
+							</div>
+						</div>
+						<div class="sustainability__content">
+							<header class="reveal">
+								<span class="sustainability__eyebrow">Sostenibilidad</span>
+								<h2>El cartón nace circular</h2>
+								<p class="sustainability__lead">
+									Creemos en un empaque que respeta el planeta. Por eso impulsamos el uso
+									de fibra reciclada, tintas al agua y procesos de bajo consumo energético.
+								</p>
+							</header>
+							<div class="sustainability__metrics">
+								<div class="sustainability__metric reveal">
+									<span class="sustainability__metric-value" data-count="98" data-suffix="%">0%</span>
+									<span class="sustainability__metric-label">Fibra reciclada</span>
+								</div>
+								<div class="sustainability__metric reveal">
+									<span class="sustainability__metric-value" data-count="120" data-suffix="M+">0</span>
+									<span class="sustainability__metric-label">Cajas al año</span>
+								</div>
+								<div class="sustainability__metric reveal">
+									<span class="sustainability__metric-value" data-count="34" data-suffix="k">0k</span>
+									<span class="sustainability__metric-label">m² producidos al mes</span>
+								</div>
+								<div class="sustainability__metric reveal">
+									<span class="sustainability__metric-value" data-count="140" data-suffix="+">0</span>
+									<span class="sustainability__metric-label">Colaboradores</span>
+								</div>
+							</div>
+							<a class="sustainability__cta reveal" href="#contacto">Hablemos de tu proyecto</a>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="contact section-pad" id="contacto">
+				<div class="container contact__layout">
+					<div class="contact__intro reveal">
+						<p class="eyebrow">Empezamos cuando quieras</p>
+						<h2>Hablemos de<br /><em>tu próximo envase.</em></h2>
+						<p>
+							Cuéntanos qué necesitas y te responderemos con una propuesta concreta.
+						</p>
+						<div class="contact__details">
+							<a href="tel:+34968693575">+34 968 693 575</a
+							><a href="mailto:info@laauxiliar.es">info@laauxiliar.es</a
+							><a
+								class="location-link"
+								href="https://www.google.com/maps/search/?api=1&query=Calle+Los+Mateos+1%2C+30564+Lorqu%C3%AD%2C+Murcia"
+								target="_blank"
+								rel="noopener noreferrer"
+								><svg aria-hidden="true" viewBox="0 0 24 24">
+									<path d="M12 21s7-6.1 7-13a7 7 0 1 0-14 0c0 6.9 7 13 7 13Z"></path>
+									<circle cx="12" cy="8" r="2.3"></circle></svg
+								><span>C/ Los Mateos, 1 · 30564 Lorquí, Murcia</span></a
+							>
+						</div>
+					</div>
+					<form class="contact-form reveal">
+						<label
+							>Nombre o empresa<input
+								type="text"
+								name="name"
+								required
+								placeholder="¿Con quién hablamos?" /></label
+						><label
+							>Email<input
+								type="email"
+								name="email"
+								required
+								placeholder="tu@email.com" /></label
+						><label
+							>Tu proyecto<textarea
+								name="message"
+								required
+								rows="4"
+								placeholder="Cuéntanos qué necesitas..."
+							></textarea></label
+						><button class="button button--yellow" type="submit">
+							Enviar consulta <span>→</span>
+						</button>
+						<p class="form-status" role="status"></p>
+					</form>
+				</div>
+			</section>
+		</main>
+		<footer class="footer">
+			<div class="container footer__inner">
+				<a
+					class="brand brand--footer"
+					href="#inicio"
+					aria-label="VerdeForma, inicio"
+					><img class="brand__logo" src="assets/logo-aux.svg" alt="VerdeForma"
+				/></a>
+				<p>Packaging hecho para funcionar.</p>
+				<span>© 2026 Auxiliar Manipulador del Cartón</span>
+			</div>
+			<div class="footer-legal">
+				<button class="footer-legal__toggle" type="button" aria-expanded="false" aria-controls="legal-panel">
+					Ley de protección de datos <span aria-hidden="true">↑</span>
+				</button>
+				<section class="legal-panel" id="legal-panel" aria-hidden="true" aria-labelledby="legal-title" inert>
+					<div class="legal-panel__inner">
+						<div class="legal-panel__header">
+							<p class="eyebrow">Información legal</p>
+							<h2 id="legal-title">Ley de protección de datos</h2>
+							<button class="legal-panel__close" type="button" aria-label="Cerrar ley de protección de datos">×</button>
+						</div>
+						<div class="legal-panel__content">
+							<p>El propósito de este Aviso Legal, es informar a los usuarios de www.laauxiliar.es, domiciliada en C/ Los Mateos, nº 1, Lorquí, 30564 - Murcia, cuya razón social del Responsable del fichero es AUXILIAR MANIPULADORA DEL CARTON, S.L., de cual es su política de protección de la privacidad y confidencialidad de los datos de carácter personal que sus usuarios facilitan de forma libre y voluntaria.</p>
+							<p>La recogida y tratamiento automatizado de los datos de carácter personal tiene como finalidad principal el poder servir la información que los usuarios de la web nos solicitan a través de esta vía.</p>
+							<p>Los destinatarios de esta información únicamente serán los departamentos en que se divide la empresa y entes colaboradores oportunos para el desempeño de sus atribuciones y objeto social (que únicamente acceden a los datos en los términos del art. 12 LOPD, sin que ello comporte en ningún caso una comunicación de los datos), así como la cesión a los estamentos oficiales públicos o privados que lo exijan por Ley.</p>
+							<p>En el período de tiempo que transcurra entre la solicitud de consulta y nuestra respuesta se garantiza el ejercicio de los derechos de acceso, cancelación, rectificación, oposición del usuario, a sus datos de carácter personal que forman parte de nuestro fichero. Para ello dirigirá su solicitud a través del correo electrónico <a href="mailto:info@laauxiliar.es">info@laauxiliar.es</a> o bien a la dirección postal C/ Los Mateos, nº 1, Lorquí, 30564 - Murcia.</p>
+							<p>La Web www.laauxiliar.es ha adoptado las medidas de índole técnica y organizativas necesarias, según el nivel de seguridad de protección de datos que le corresponde legalmente, para garantizar la seguridad del tratamiento de datos de carácter personal que constituyen su fichero automatizado. Sin embargo, el usuario debe ser consciente de que en la actualidad las medidas de seguridad en Internet no son inexpugnables y por lo tanto no se está a salvo de posibles intromisiones ilegales e indebidas, que no serían responsabilidad de AUXILIAR MANIPULADORA DEL CARTON, S.L., ya que ella ha actuado con la diligencia debida para proteger los datos conforme determina la ley.</p>
+							<p>La Web no hace uso de ningún tipo de tratamiento invisible.</p>
+							<p>La Web www.laauxiliar.es hará todo lo posible porque sus datos estén siempre actualizados. No obstante, la responsabilidad acerca de la calidad de los datos depende del titular de ellos, de ahí que si existe alguna modificación de los datos el usuario de la web los comunicará al Responsable del Fichero, declinando este toda responsabilidad en caso de que omita su obligación de notificar los cambios.</p>
+							<p>La prestación del servicio de esta Web y las presentes condiciones de Uso del Sitio Web se rigen por la Ley española. Para cualquier discrepancia en la ejecución, interpretación, cumplimiento de estas condiciones, las partes se someten a los Juzgados y Tribunales de Murcia.</p>
+							<p><strong>AUXILIAR MANIPULADORA DEL CARTON, S.L.</strong> no asume responsabilidad alguna en relación con el material incluido en estas páginas. Dicho material:</p>
+							<ul>
+								<li>no ofrece necesariamente información exhaustiva, completa, exacta o actualizada;</li>
+								<li>contiene en algunas ocasiones enlaces a páginas externas sobre las que no se tiene control alguno y por lo que desconoce el contenido de las mismas y respecto de las cuales declinamos toda responsabilidad;</li>
+								<li>no ofrece asesoramiento profesional o jurídico.</li>
+							</ul>
+							<p>No puede garantizarse que un documento disponible en línea reproduzca exactamente un texto adoptado oficialmente.</p>
+							<p>No obstante, en caso de que encuentre cualquier error en estas páginas, rogamos que nos lo <a href="mailto:info@laauxiliar.es">comunique</a> para que podamos subsanarlo lo antes posible.</p>
+							<ul>
+								<li>Queda prohibida la reproducción, copia, uso, distribución, comercialización, comunicación pública o cualquier otra actividad que se pueda hacer con el contenido de estas páginas web, que necesitará siempre la autorización expresa de <strong>AUXILIAR MANIPULADORA DEL CARTON, S.L.</strong>. Se advierte expresamente que estas actividades están castigadas por la legislación vigente en materia de propiedad intelectual.</li>
+								<li><strong>AUXILIAR MANIPULADORA DEL CARTON, S.L.</strong> no se identifica necesariamente con las informaciones y las opiniones contenidas en estas páginas web.</li>
+								<li><strong>AUXILIAR MANIPULADORA DEL CARTON, S.L.</strong> no se responsabiliza de la mala utilización de los contenidos de estas páginas web por parte del usuario.</li>
+								<li><strong>AUXILIAR MANIPULADORA DEL CARTON, S.L.</strong> no se responsabiliza de ninguna información no contenida en estas páginas web y, por tanto, no elaborada directamente y bajo el control de AUXILIAR MANIPULADORA DEL CARTON, S.L. o no publicada con su nombre. Concretamente, AUXILIAR MANIPULADORA DEL CARTON, S.L. no responde del contenido y la información de las páginas web de terceras personas conectadas por enlaces con las páginas web de AUXILIAR MANIPULADORA DEL CARTON, S.L.</li>
+								<li><strong>AUXILIAR MANIPULADORA DEL CARTON, S.L.</strong> se reserva el derecho de actualizar los contenidos de estas páginas web cuando estime conveniente, y también de eliminarlos y de limitar o impedir su acceso, de forma temporal o definitiva.</li>
+								<li><strong>AUXILIAR MANIPULADORA DEL CARTON, S.L.</strong> no se obliga a controlar las informaciones y las opiniones que los usuarios transmitan en los foros abiertos en estas páginas web. En cualquier caso, <strong>AUXILIAR MANIPULADORA DEL CARTON, S.L.</strong> se reserva el derecho de eliminar de sus páginas web cualquier información u opinión de los usuarios que sea contraria a la legalidad vigente, especialmente cuando signifique una vulneración de los derechos y las libertades fundamentales de la persona.</li>
+								<li>Cuando sea necesaria la utilización de una contraseña o nombre de usuario para acceder a algún servicio contenido en estas páginas web, el usuario se obliga a mantenerla en secreto y a hacer de ella un uso diligente. En caso de pérdida o utilización negligente de la contraseña, el usuario responderá de la utilización que de ella hayan podido hacer terceras personas.</li>
+							</ul>
+							<p><strong>EN NINGUN CASO AUXILIAR MANIPULADORA DEL CARTON, S.L. SE HACE RESPONSABLE DE LOS POSIBLES DAÑOS DIRECTOS, INDIRECTOS, ESPECIALES O DE CUALQUIER OTRO TIPO, DERIVADOS DEL USO DE ESTA WEB, O DE CUALQUIER OTRA WEB A LA QUE SE DIRIJA DESDE ÉSTA, INCLUYENDO, SIN LIMITACIÓN ALGUNA, CUALQUIER PÉRDIDA DE BENEFICIO, INTERRUPCIÓN DEL NEGOCIO, PÉRDIDA DE PROGRAMAS U OTROS DATOS DE LA INFORMACIÓN TRATADA EN SU SISTEMA, INCLUSO EN EL CASO DE QUE SE NOS HAYA INFORMADO EXPRESAMENTE DE LA POSIBILIDAD DE TALES DAÑOS.</strong></p>
+						</div>
+						<button class="legal-panel__bottom-close" type="button">Volver a plegar <span aria-hidden="true">↓</span></button>
+					</div>
+				</section>
+			</div>
+		</footer>
+		<a class="back-to-top" href="#inicio" aria-label="Volver al inicio"
+			>↑<span>Inicio</span></a
+		>
+		<script type="module" src="js/main.js"></script>
+	</body>
+</html>
