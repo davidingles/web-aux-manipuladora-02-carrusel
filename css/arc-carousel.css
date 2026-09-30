@@ -151,11 +151,17 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-family: inherit;
   font-size: 0.85rem;
   font-weight: 600;
   color: var(--ink, #26302b);
   text-decoration: none;
   transition: color 0.2s ease;
+  text-align: left;
 }
 
 .card-link .arrow-icon {

@@ -17,6 +17,8 @@
 		<link rel="stylesheet" href="css/responsive.css" />
 		<link rel="stylesheet" href="css/page-overrides.css" />
 		<link rel="stylesheet" href="css/arc-carousel.css" />
+		<link rel="stylesheet" href="css/product-dialog.css" />
+		<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 	</head>
 	<body>
 		<header class="site-header" id="inicio">
@@ -595,6 +597,16 @@
 				</section>
 			</div>
 		</footer>
+		<dialog class="catalog-dialog" aria-labelledby="dialog-title">
+			<div class="catalog-dialog__nav">
+				<button class="catalog-dialog__prev" type="button">Anterior</button>
+				<button class="catalog-dialog__next" type="button">Siguiente</button>
+			</div>
+			<button class="catalog-dialog__close" type="button" aria-label="Cerrar ficha">×</button>
+			<div class="catalog-dialog__content"></div>
+			<section class="catalog-dialog__video" hidden aria-label="Vídeo del producto"><video muted loop playsinline controls></video></section>
+			<p class="catalog-dialog__model-hint" hidden>Haz clic y gíralo.</p>
+		</dialog>
 		<a class="back-to-top" href="#inicio" aria-label="Volver al inicio"
 			>↑<span>Inicio</span></a
 		>

@@ -1,5 +1,6 @@
 import { PRODUCTS, CATEGORIES } from './products-data.js';
 import { ArcCarousel } from './arc-carousel.js';
+import { ProductDialog } from './product-dialog.js';
 
 const menuButton=document.querySelector('.menu-toggle');const nav=document.querySelector('.nav');
 menuButton?.addEventListener('click',()=>{const isOpen=nav.classList.toggle('is-open');menuButton.setAttribute('aria-expanded',String(isOpen))});
@@ -59,6 +60,12 @@ if (trackElemento && filtrosContainer) {
   let carruselInstancia = null;
   let categoriaActiva = 'todos';
 
+  const productDialog = new ProductDialog({
+    dialogSelector: '.catalog-dialog',
+    products: PRODUCTS,
+    basePath: ''
+  });
+
   const renderizarTarjetas = (lista) => {
     trackElemento.innerHTML = '';
     const fragmento = document.createDocumentFragment();
@@ -83,10 +90,10 @@ if (trackElemento && filtrosContainer) {
           <h3 class="card-title">${producto.title}</h3>
           <p class="card-desc">${producto.description}</p>
           <div class="card-footer">
-            <a href="catalogo/#${encodeURIComponent(producto.id)}" class="card-link">
-              <span>Ver en catálogo</span>
-              <span class="arrow-icon" aria-hidden="true">→</span>
-            </a>
+            <button type="button" class="card-link" data-open-product="${producto.id}">
+              <span>Ver ficha y modelo 3D</span>
+              <span class="arrow-icon" aria-hidden="true">↗</span>
+            </button>
           </div>
         </div>
       `;
@@ -104,7 +111,13 @@ if (trackElemento && filtrosContainer) {
         containerSelector: '#carouselContainer',
         trackSelector: '#carouselTrack',
         prevButtonSelector: '#btnPrev',
-        nextButtonSelector: '#btnNext'
+        nextButtonSelector: '#btnNext',
+        onCardClick: (tarjeta) => {
+          const productId = tarjeta.getAttribute('data-id');
+          if (productId) {
+            productDialog.open(productId, tarjeta);
+          }
+        }
       });
     }
 
@@ -134,6 +147,7 @@ if (trackElemento && filtrosContainer) {
             ? PRODUCTS
             : PRODUCTS.filter((prod) => prod.category === cat.id);
 
+        productDialog.getVisibleProducts = () => productosFiltrados;
         renderizarTarjetas(productosFiltrados);
       });
 

@@ -9,13 +9,15 @@ export class ArcCarousel {
     trackSelector,
     prevButtonSelector,
     nextButtonSelector,
-    onIndexChange
+    onIndexChange,
+    onCardClick
   }) {
     this.container = document.querySelector(containerSelector);
     this.track = document.querySelector(trackSelector);
     this.prevButton = document.querySelector(prevButtonSelector);
     this.nextButton = document.querySelector(nextButtonSelector);
     this.onIndexChange = onIndexChange;
+    this.onCardClick = onCardClick;
 
     this.items = [];
     this.currentIndex = 0;
@@ -182,12 +184,17 @@ export class ArcCarousel {
       objetivo = Math.max(0, Math.min(maxIndice, objetivo));
       this.animateToIndex(objetivo);
     } else {
-      // Si fue solo un clic y no un arrastre, enfocar la tarjeta seleccionada
+      // Si fue solo un clic y no un arrastre, gestionar clic en la tarjeta
       const tarjeta = evento.target.closest('.carousel-card');
       if (tarjeta) {
         const indiceTarjeta = this.items.indexOf(tarjeta);
-        if (indiceTarjeta !== -1 && indiceTarjeta !== Math.round(this.currentIndex)) {
-          this.animateToIndex(indiceTarjeta);
+        if (indiceTarjeta !== -1) {
+          if (indiceTarjeta !== Math.round(this.currentIndex)) {
+            this.animateToIndex(indiceTarjeta);
+          }
+          if (typeof this.onCardClick === 'function') {
+            this.onCardClick(tarjeta, indiceTarjeta);
+          }
         }
       }
     }

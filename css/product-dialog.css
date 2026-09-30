@@ -1,0 +1,345 @@
+/* ==========================================================================
+   Estilos de la Ventana Modal de Ficha de Producto (3D y Vídeo)
+   Compartida entre la página principal y la página del catálogo
+   ========================================================================== */
+
+.catalog-dialog {
+  position: fixed;
+  width: min(1120px, calc(100% - 48px));
+  height: min(820px, calc(100vh - 48px));
+  max-height: calc(100vh - 48px);
+  padding: 0;
+  border: 0;
+  border-radius: 18px;
+  background: var(--cream, #ffffff);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.38);
+  overflow: hidden;
+}
+
+.catalog-dialog::backdrop {
+  background: rgba(20, 35, 27, 0.8);
+  backdrop-filter: blur(4px);
+}
+
+/* --------------------------------------------------------------------------
+   Contenido Grid: 2 Columnas al 100% de altura (cuando NO hay vídeo)
+   -------------------------------------------------------------------------- */
+.catalog-dialog__content {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+  grid-template-rows: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Modo 4 cuadrantes (cuando SÍ hay vídeo) */
+.catalog-dialog__content.is-quad {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-rows: minmax(0, 1fr) minmax(0, 1fr);
+}
+
+/* Columna de información y ficha técnica */
+.catalog-dialog__copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: clamp(28px, 4vw, 48px);
+  overflow-y: auto;
+  height: 100%;
+  background: #ffffff;
+}
+
+.catalog-dialog__copy .catalog-eyebrow {
+  margin-bottom: 12px;
+  color: var(--green, #215d48);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.catalog-dialog__title-row {
+  margin-bottom: 16px;
+  width: 100%;
+}
+
+.catalog-dialog__title-row h2 {
+  margin: 0;
+  color: var(--ink, #26302b);
+  font-size: clamp(1.8rem, 3.5vw, 2.75rem);
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+}
+
+.catalog-dialog__copy p {
+  margin: 0;
+  color: var(--muted, #6e7773);
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+.catalog-dialog__copy a {
+  margin-top: 24px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--green, #215d48);
+  font-size: 0.88rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.catalog-dialog__copy a:hover {
+  color: var(--color-principal, #00833e);
+  transform: translateX(4px);
+}
+
+/* Panel de fotografía fija (cuando no hay modelo 3D) */
+.catalog-dialog__photo {
+  position: relative;
+  min-width: 0;
+  min-height: 0;
+  height: 100%;
+  overflow: hidden;
+  background: #e7f0ec;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.catalog-dialog__photo img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 24px;
+}
+
+/* Panel del modelo interactivo 3D */
+.catalog-dialog__model {
+  position: relative;
+  min-width: 0;
+  min-height: 0;
+  height: 100%;
+  overflow: hidden;
+  background: #f1f2ee;
+}
+
+.catalog-dialog__model model-viewer {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  background: #f1f2ee;
+}
+
+.catalog-dialog__model-hint {
+  position: absolute;
+  left: 50%;
+  bottom: 14px;
+  z-index: 2;
+  transform: translateX(-50%);
+  margin: 0;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.92);
+  color: #1e3029;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  backdrop-filter: blur(4px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  opacity: 0.9;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+/* Panel del vídeo de producto */
+.catalog-dialog__video {
+  min-width: 0;
+  min-height: 0;
+  height: 100%;
+  overflow: hidden;
+  background: #111111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Regla estricta para asegurar que el vídeo oculto nunca ocupe espacio de grid */
+.catalog-dialog__video[hidden] {
+  display: none !important;
+}
+
+.catalog-dialog__video video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+/* --------------------------------------------------------------------------
+   Botonera de Navegación (Anterior / Siguiente) y Cierre
+   -------------------------------------------------------------------------- */
+.catalog-dialog__nav {
+  position: absolute;
+  top: 14px;
+  right: 56px;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.catalog-dialog__prev,
+.catalog-dialog__next {
+  padding: 8px 14px;
+  border: 0;
+  border-radius: 6px;
+  background: var(--ink, #26302b);
+  color: #ffffff;
+  font: inherit;
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease, opacity 0.2s ease;
+}
+
+.catalog-dialog__prev:hover:not(:disabled),
+.catalog-dialog__next:hover:not(:disabled) {
+  background: var(--green, #215d48);
+}
+
+.catalog-dialog__prev:disabled,
+.catalog-dialog__next:disabled {
+  cursor: not-allowed;
+  opacity: 0.35;
+}
+
+.catalog-dialog__close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 5;
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--ink, #26302b);
+  font-size: 1.4rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.catalog-dialog__close:hover {
+  background: #ffffff;
+  transform: scale(1.08);
+}
+
+/* --------------------------------------------------------------------------
+   Diseño Responsive (Dispositivos móviles y tablets)
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  .catalog-dialog {
+    width: calc(100% - 24px);
+    height: calc(100dvh - 24px);
+    max-height: calc(100dvh - 24px);
+    overflow: hidden;
+  }
+
+  .catalog-dialog__nav {
+    top: 12px;
+    right: 50px;
+    gap: 6px;
+  }
+
+  .catalog-dialog__prev,
+  .catalog-dialog__next {
+    padding: 6px 10px;
+    font-size: 0.72rem;
+  }
+
+  .catalog-dialog__content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow-y: auto;
+  }
+
+  .catalog-dialog__copy {
+    display: contents;
+  }
+
+  .catalog-dialog__copy .catalog-eyebrow {
+    display: none;
+  }
+
+  .catalog-dialog__copy > p:not(.catalog-eyebrow) {
+    order: 1;
+    padding: 16px 20px 0;
+  }
+
+  .catalog-dialog__copy > a {
+    display: none;
+  }
+
+  .catalog-dialog__title-row {
+    order: 1;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 18px 180px 0 20px;
+    margin-bottom: 0;
+  }
+
+  .catalog-dialog__title-row h2 {
+    flex: 1 1 auto;
+    min-width: 0;
+    margin: 0;
+    font-size: clamp(1.4rem, 6vw, 1.85rem);
+    line-height: 1.1;
+  }
+
+  .catalog-dialog__model {
+    order: 2;
+    height: 38dvh;
+    min-height: 200px;
+  }
+
+  .catalog-dialog__video {
+    order: 3;
+    height: 28dvh;
+    min-height: 160px;
+    margin: 0;
+    overflow: hidden;
+  }
+
+  .catalog-dialog__photo {
+    order: 2;
+    height: 30dvh;
+    min-height: 180px;
+  }
+
+  .catalog-dialog model-viewer {
+    width: 100%;
+    height: 100%;
+    min-width: 0;
+    min-height: 0;
+  }
+
+  .catalog-dialog__video video {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    min-width: 0;
+    min-height: 160px;
+  }
+}

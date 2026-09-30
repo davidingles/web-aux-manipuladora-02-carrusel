@@ -12,23 +12,7 @@
 		<link rel="stylesheet" href="../css/catalogo.css" />
 		<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 		<script type="module" src="../js/catalogo.js"></script>
-		<style>
-			.catalog-dialog { position: fixed; width: min(1120px, calc(100% - 48px)); height: min(820px, calc(100vh - 48px)); max-height: calc(100vh - 48px); }
-			.catalog-dialog__content { display: grid; grid-template-columns: minmax(0, 1fr); grid-template-rows: auto minmax(0, 1fr); height: 100%; overflow: hidden; }
-			.catalog-dialog__content.is-quad { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); grid-template-rows: minmax(0, 1fr) minmax(0, 1fr); }
-			.catalog-dialog__copy { overflow: auto; justify-content: start; }
-			.catalog-dialog__photo { position: relative; min-width: 0; min-height: 0; overflow: hidden; background: #e7f0ec; }
-			.catalog-dialog__photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; }
-			.catalog-dialog__model { position: relative; min-width: 0; min-height: 0; overflow: hidden; }
-			.catalog-dialog__model model-viewer { width: 100%; height: 100%; min-height: 0; background: #f1f2ee; }
-			.catalog-dialog__video { min-width: 0; min-height: 0; overflow: hidden; background: #111; }
-			.catalog-dialog__video video { display: block; width: 100%; height: 100%; max-height: 100%; object-fit: contain; }
-			.catalog-dialog__model-hint { position: absolute; left: 50%; bottom: 12px; z-index: 1; transform: translateX(-50%); margin: 0; padding: 6px 14px; border-radius: 999px; background: #ffffffe0; color: #1e3029; font-size: .72rem; font-weight: 600; letter-spacing: .01em; backdrop-filter: blur(4px); box-shadow: 0 2px 8px #0002; opacity: .85; white-space: nowrap; pointer-events: none; }
-			.catalog-dialog__next { position: absolute; top: 12px; right: 54px; z-index: 1; padding: 10px 16px; border: 0; border-radius: 6px; background: #1e3029; color: #fff; font: inherit; font-size: .8rem; font-weight: 700; cursor: pointer; }
-			.catalog-dialog__next:hover:not(:disabled) { background: #2f7255; }
-			.catalog-dialog__next:disabled { cursor: not-allowed; opacity: .45; }
-			@media (max-width: 720px) { .catalog-dialog { width: calc(100% - 24px); height: calc(100dvh - 24px); max-height: calc(100dvh - 24px); overflow: hidden; } .catalog-dialog__content { display: flex; flex-direction: column; height: 100%; overflow: auto; } .catalog-dialog__copy { display: contents; } .catalog-dialog__copy .catalog-eyebrow { display: none; } .catalog-dialog__copy > p:not(.catalog-eyebrow) { order: 1; padding: 18px 20px 0; } .catalog-dialog__copy > a { display: none; } .catalog-dialog__title-row { order: 1; display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; padding: 20px 120px 0 20px; } .catalog-dialog__title-row h2 { flex: 1 1 auto; min-width: 0; margin: 0; font-size: clamp(1.45rem, 7vw, 2rem); line-height: 1; } .catalog-dialog__model { order: 2; height: 38dvh; min-height: 220px; } .catalog-dialog__video { order: 3; height: 30dvh; min-height: 180px; margin: 0; overflow: hidden; } .catalog-dialog__photo { order: 2; height: 30dvh; min-height: 180px; } .catalog-dialog model-viewer { min-width: 0; min-height: 0; width: 100%; height: 100%; } .catalog-dialog__video video { box-sizing: border-box; width: 100%; height: 100%; min-width: 0; min-height: 180px; max-width: 100%; max-height: 100%; } }
-		</style>
+		<link rel="stylesheet" href="../css/product-dialog.css" />
 	</head>
 	<body class="catalog-page">
 		<header class="catalog-header">
@@ -92,7 +76,10 @@
 		</main>
 		<footer class="catalog-footer"><div class="catalog-shell"><img src="../assets/logo-aux.svg" alt="Auxiliar Manipuladora del Cartón" /><p>Envases y embalajes de cartón corrugado · Murcia</p><a href="../#contacto">Contacto</a></div></footer>
 		<dialog class="catalog-dialog" aria-labelledby="dialog-title">
-			<button class="catalog-dialog__next" type="button">Siguiente</button>
+			<div class="catalog-dialog__nav">
+				<button class="catalog-dialog__prev" type="button">Anterior</button>
+				<button class="catalog-dialog__next" type="button">Siguiente</button>
+			</div>
 			<button class="catalog-dialog__close" type="button" aria-label="Cerrar ficha">×</button>
 			<div class="catalog-dialog__content"></div>
 			<section class="catalog-dialog__video" hidden aria-label="Vídeo del producto"><video muted loop playsinline controls></video></section>
